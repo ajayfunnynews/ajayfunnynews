@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay Funny News | Official Website</title>
+
+<style>
+/* =========================================
+   वेबसाइट के मुख्य रंग
+   यहां से आप पूरी वेबसाइट के रंग बदल सकते हैं
+========================================= */
+:root {
+    --green: #27864d;
+    --light-green: #eaf7ee;
+    --white: #ffffff;
+
+    /* लाल रंग की जगह हल्का आसमानी नीला */
+    --blue: #55a9d6;
+    --light-blue: #edf8ff;
+
+    --text: #263b30;
+    --muted: #718078;
+    --border: #e2eee5;
+}
+
+/* सभी एलिमेंट की सामान्य सेटिंग */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================================
+   HEADER / ऊपर का मेन्यू
+========================================= */
+header {
+    width: 100%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* अपनी वेबसाइट का Logo यहां लगाएं */
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+/* =========================================
+   HERO SECTION / वेबसाइट का मुख्य हिस्सा
+========================================= */
+.hero {
+    background: linear-gradient(
+        120deg,
+        var(--light-green),
+        var(--light-blue)
+    );
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.hero-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: var(--green);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background: #1c6c3b;
+}
+
+/* =========================================
+   सभी मुख्य सेक्शन की सामान्य सेटिंग
+========================================= */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 29px;
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   ABOUT US / हमारे बारे में
+========================================= */
+.about-box {
+    background: var(--light-green);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+}
+
+.about-box p {
+    max-width: 800px;
+    margin: auto;
+    color: var(--text);
+    font-size: 16px;
+}
+
+/* =========================================
+   WHAT WE OFFER / हमारी विशेषताएं
+========================================= */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px 18px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(30, 80, 50, 0.05);
+}
+
+.feature-card:nth-child(2) {
+    background: var(--light-blue);
+}
+
+.feature-card h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================================
+   SOCIAL MEDIA / सभी 12 सोशल मीडिया
+========================================= */
+.social-section {
+    background: var(--light-blue);
+}
+
+.social-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 20px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* हर सोशल मीडिया का कार्ड */
+.social-card {
+    background: var(--white);
+    border: 1px solid #dcecf5;
+    border-radius: 15px;
+    padding: 22px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+    box-shadow: 0 8px 20px rgba(30, 80, 50, 0.10);
+}
+
+/* यहां अपनी सोशल मीडिया Logo की इमेज लगाएं */
+.social-card img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.social-card h3 {
+    font-size: 15px;
+    color: var(--green);
+}
+
+/* =========================================
+   CONTACT SECTION / संपर्क
+========================================= */
+.contact-box {
+    background: var(--light-green);
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 11px 25px;
+    background: var(--blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* =========================================
+   FOOTER / वेबसाइट का सबसे नीचे का हिस्सा
+========================================= */
+footer {
+    background: #eaf7ee;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+footer strong {
+    color: var(--green);
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   मोबाइल और टैबलेट के लिए सेटिंग
+========================================= */
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 55px 15px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section,
+    .social-inner {
+        padding: 45px 15px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .social-card {
+        padding: 16px 5px;
+    }
+
+    .social-card img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .social-card h3 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* VIDEO GALLERY: अलग स्कोप ताकि बाकी वेबसाइट का डिजाइन न बदले */
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+#video-gallery .gallery-heading {
+  text-align: center;
+  color: #279b68;
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+#video-gallery .gallery-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#video-gallery .video-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#video-gallery .video-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px #00000015;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#video-gallery .video-card:hover {
+  transform: translateY(-3px);
+}
+
+#video-gallery .video-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+#video-gallery .video-title {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+#video-gallery .video-label {
+  color: #e53935;
+  padding: 0 10px 12px;
+  font-size: 12px;
+}
+
+#video-gallery .video-player {
+  display: none;
+  max-width: 850px;
+  margin: 25px auto;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px #00000020;
+}
+
+#video-gallery .video-player iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+}
+
+#video-gallery .close-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  #video-gallery .video-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+#video-gallery { scroll-margin-top: 100px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER: अपनी Logo का नाम यहां बदलें
+===================================== -->
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="logo.png" alt="Ajay Funny News Logo">
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#social">Social Media</a>
+            <a href="#video-gallery">Video Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =====================================
+     HERO: वेबसाइट का मुख्य परिचय
+===================================== -->
+<section class="hero" id="home">
+
+    <div class="hero-logo">
+        <img src="logo.png" alt="Ajay Funny News">
+    </div>
+
+    <h1>Ajay Funny News</h1>
+
+    <p>
+        आपका स्वागत है अजय फनी न्यूज़ की आधिकारिक वेबसाइट पर।
+        यहां आपको मनोरंजन, मजेदार खबरें और कॉमेडी से जुड़ा कंटेंट मिलेगा।
+    </p>
+
+    <a href="#social" class="hero-button">
+        हमसे जुड़ें
+    </a>
+
+</section>
+
+
+<!-- =====================================
+     ABOUT US: अपने बारे में जानकारी
+===================================== -->
+<section class="section" id="about">
+
+    <h2 class="section-title">About Us</h2>
+
+    <p class="section-subtitle">
+        हमारे चैनल के बारे में जानिए
+    </p>
+
+    <div class="about-box">
+
+        <p>
+            Ajay Funny News एक मनोरंजन आधारित चैनल है।
+            यहां आपको मजेदार खबरें, हास्य और मनोरंजन से जुड़े
+            वीडियो देखने को मिलेंगे। हमारा उद्देश्य दर्शकों को
+            मनोरंजन के साथ हंसाना है। किसी भी App पर हमारे चैनल का नाम सर्च करें @ajayfunnynews
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FEATURES: वेबसाइट की खास बातें
+===================================== -->
+<section class="section">
+
+    <h2 class="section-title">What We Offer</h2>
+
+    <p class="section-subtitle">
+        हमारे कंटेंट की खासियत
+    </p>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <h3>Funny News</h3>
+            <p>
+                मजेदार और मनोरंजन से भरपूर खबरें।
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Comedy Videos</h3>
+            <p>
+                हंसी और मनोरंजन से जुड़े वीडियो।
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Entertainment</h3>
+            <p>
+                आपके मनोरंजन के लिए खास कंटेंट।
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SOCIAL MEDIA: अपने 12 Logo और लिंक लगाएं
+     हर कार्ड में इमेज का नाम और लिंक बदलें
+===================================== -->
+<section class="social-section" id="social">
+
+    <div class="social-inner">
+
+        <h2 class="section-title">Connect With Us</h2>
+
+        <p class="section-subtitle">
+            हमारे सभी सोशल मीडिया प्लेटफॉर्म पर जुड़ें
+        </p>
+
+        <div class="social-grid">
+
+            <!-- 1. YouTube -->
+            <a class="social-card" href="https://youtube.com/@ajayfunnynews?si=nT7XwEKXas1j71IT" target="_blank">
+                <img src="youtube.png" alt="YouTube Logo">
+                <h3>YouTube</h3>
+            </a>
+
+            <!-- 2. Instagram -->
+            <a class="social-card" href="https://www.instagram.com/ajayfunnynews?xtok=MTZpbnh6Z3JrNWk1eQ==" target="_blank">
+                <img src="Instagram.png" alt="Instagram Logo">
+                <h3>Instagram</h3>
+            </a>
+
+            <!-- 3. Facebook -->
+            <a class="social-card" href="https://www.facebook.com/share/1kRgSqWVdW/" target="_blank">
+                <img src="Facebook.png" alt="Facebook Logo">
+                <h3>Facebook</h3>
+            </a>
+
+            <!-- 4. Snapchat -->
+            <a class="social-card" href="https://www.snapchat.com/add/ajayfunnynews?share_id=jcaKFagbdIg&locale=hi-IN" target="_blank">
+                <img src="snap.png" alt="Snapchat Logo">
+                <h3>Snapchat</h3>
+            </a>
+
+            <!-- 5. ShareChat -->
+            <a class="social-card" href="https://sharechat.com/profile/ajayfunnynews?d=n" target="_blank">
+                <img src="shere.png" alt="ShareChat Logo">
+                <h3>ShareChat</h3>
+            </a>
+
+            <!-- 6. Moj -->
+            <a class="social-card" href=" https://mojapp.in/@ajayfunnynews?referrer=VZtYmMV-IYqZvV" target="_blank">
+                <img src="moj.png" alt="Moj Logo">
+                <h3>Moj</h3>
+            </a>
+
+            <!-- 7. Threads -->
+            <a class="social-card" href="https://www.threads.com/@ajayfunnynews" target="_blank">
+                <img src="theread.png" alt="Threads Logo">
+                <h3>Threads</h3>
+            </a>
+
+            <!-- 8. X -->
+            <a class="social-card" href="https://x.com/ajayfunnynews" target="_blank">
+                <img src="x.png" alt="X Logo">
+                <h3>X</h3>
+            </a>
+
+            <!-- 9. Telegram -->
+            <a class="social-card" href="https://t.me/ajayfunnynews" target="_blank">
+                <img src="telegram.png" alt="Telegram Logo">
+                <h3>Telegram</h3>
+            </a>
+
+            <!-- 10. WhatsApp -->
+            <a class="social-card" href="https://whatsapp.com/channel/0029VbDdeU64inoirmbABZ3u" target="_blank">
+                <img src="whatsapp.png" alt="WhatsApp Logo">
+                <h3>WhatsApp</h3>
+            </a>
+
+            <!-- 11. Bilibili -->
+            <a class="social-card" href="https://b23.tv/opS9lcz" target="_blank">
+                <img src="bilibili.png" alt="Bilibili Logo">
+                <h3>Bilibili</h3>
+            </a>
+
+            <!-- 12. TikTok -->
+            <a class="social-card" href="https://www.tiktok.com/@ajayfunnynews?_r=1&_d=f19gif2ledhc7l&sec_uid=MS4wLjABAAAAykmas01CfqyAFIfl_OmdIMcEvTbf8joi28tbRjt2OVDNpkb1882jOUTuvl9Mc_lM&share_author_id=7685069520155165704&sharer_language=hi&source=h5_m&u_code=f5ffkhkggb1adi&timestamp=1793693799&user_id=7685069520155165704&sec_user_id=MS4wLjABAAAAykmas01CfqyAFIfl_OmdIMcEvTbf8joi28tbRjt2OVDNpkb1882jOUTuvl9Mc_lM&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7685069414773786386&share_link_id=52ed25fa-6ae8-40b2-80b2-731a7c3138a5&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" target="_blank">
+                <img src="tiktok.png" alt="TikTok Logo">
+                <h3>TikTok</h3>
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+<!-- VIDEO GALLERY: इसी पेज पर वीडियो देखने के लिए -->
+<section class="section" id="video-gallery">
+  <h2 class="section-title">🎬 Video Gallery</h2>
+  <p class="section-subtitle">हमारे नए मजेदार वीडियो देखें</p>
+  <div class="video-gallery" id="videoGallery"></div>
+  <div class="video-player" id="videoPlayer">
+    <button class="close-btn" type="button" onclick="closeVideo()">✕ वीडियो बंद करें</button>
+    <div id="playerFrame"></div>
+  </div>
+</section>
+
+<script>
+
+
+// अपने YouTube वीडियो यहाँ जोड़ें
+
+const videos = [
+  {
+    id: "qUW_13snLuc",
+    title: "#afn-14 करवा चौथ पर पत्नी की अनोखी डीमांड"
+  },
+  
+  {
+    id: "9QS0XZmVyXI",
+    title: "#afn-13 पत्नी के सामने पति की बोलती बंद! 😂 | मजेदार फनी न्यूज़ @ajayfunnynews"
+  },
+  {
+    id: "qXjwd4uiSKA",
+    title: "#afn-12 केला खाने की ऐसी गलती, जिसका अंजाम सोचकर आप भी चौंक जाएंगे!@ajayfunnynews #ajayfunnynews"
+  },
+  {
+    id: "Y1jJRcQMBqo",
+    title: "#afn-11 जब समोसा सामने आया तो डाइट ने खुद दे दिया इस्तीफा @ajayfunnynews"
+  },
+    {
+    id: "r3opGe5ncUs",
+    title: "#afn-10 घरवालों ने नहीं दी चाय, युवक ने छिपाई चायपत्ती… फिर पड़ोसी ने दिया झटका! #ajayfunnynews #funnynews @ajayfunnynews"
+  },
+   {
+    id: "6w0Foh4gFK4",
+    title: "#afn-9 जिम पहुंची लड़की ने 2 मिनट में छोड़ी मेहनत, बोली—ऐसी मशीन चाहिए जिसमें बैठकर फिटनेस खुद हो जाए!"
+  },
+   {
+    id: "S3uUW_cXFxs",
+    title: "#anf-8 😂🔋 1% बैटरी ने मचाई अफरा-तफरी, चार्जर मिला तो सामने आया असली ट्विस्ट!"
+  },
+   {
+    id: "dcGluPc4bxk",
+    title: "#afn-7 मोबाइल देखकर बारिश बताई, गांव वालों ने युवक को बना दिया 'मौसम बाबा'!"
+  },
+   {
+    id: "WIS4E-h52JQ",
+    title: "#afn-5 गर्मी की ताज़ा खबरें | फ्रिज मे औरत, मेकअप पिघला, बच्चे बने ठंडाई गैंग @ajayfunnynews"
+  },
+   {
+    id: "A1mSwagXomk",
+    title: "#afn-4 आज की तड़कती-फड़कती मजेदार खबरें! "
+  },
+   {
+    id: "P0a7xjyVcCY",
+    title: "#afn-3 👉 लड़के ने DP में बाइक लगाई और शुरू हो गए मजेदार मैसेज 😂👉 लड़की ने फोन लिया लेकिन सिम डालना ही भूल गई 📱  पति-पत्नी की मजेदार बातचीत 😜"
+  }
+];
+
+// Gallery तैयार करें
+
+const gallery = document.getElementById("videoGallery");
+
+videos.forEach(video => {
+
+  if (!/^[a-zA-Z0-9_-]{11}$/.test(video.id)) return;
+
+  gallery.innerHTML += `
+    <div class="video-card"
+         onclick="playVideo('${video.id}')">
+
+      <img
+        src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg"
+        alt="${video.title}"
+        loading="lazy">
+
+      <h3 class="video-title">
+        ${video.title}
+      </h3>
+
+      <div class="video-label">
+        ▶ वीडियो देखें
+      </div>
+
+    </div>
+  `;
+
+});
+
+// वीडियो चलाएं
+
+function playVideo(id) {
+
+  const player = document.getElementById("videoPlayer");
+
+  document.getElementById("playerFrame").innerHTML = `
+    <iframe
+      src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0"
+      title="YouTube Video Player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+      allowfullscreen>
+    </iframe>
+  `;
+
+  player.style.display = "block";
+
+  player.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+// वीडियो बंद करें
+
+function closeVideo() {
+
+  document.getElementById("videoPlayer").style.display = "none";
+
+  document.getElementById("playerFrame").innerHTML = "";
+
+}
+
+
+</script>
+
+<!-- =====================================
+     CONTACT: संपर्क जानकारी
+     अपना ईमेल या संपर्क लिंक यहां डालें
+===================================== -->
+<section class="section" id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-subtitle">
+        हमसे संपर्क करने के लिए नीचे क्लिक करें
+    </p>
+
+    <div class="contact-box">
+
+        <p>
+            Ajay Funny News से जुड़ने और संपर्क करने के लिए
+            हमारे सोशल मीडिया प्लेटफॉर्म पर जाएं।
+        </p>
+
+        <a href="https://www.instagram.com/ajayfunnynews?xtok=MTZpbnh6Z3JrNWk1eQ=="
+           class="contact-button" target="_blank">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER: कॉपीराइट और चैनल का नाम
+===================================== -->
+<footer>
+
+    <p>
+        © 2026 <strong>Ajay Funny News</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p>Made with care for our viewers.</p>
+
+</footer>
+
+</body>
+</html>
