@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ajayfunnynews.github.io/ajayfunnynews/sitemap.xml
